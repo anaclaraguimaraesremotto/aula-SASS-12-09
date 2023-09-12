@@ -1,0 +1,89 @@
+.text-primary {
+  color: royalblue;
+}
+
+.text-success {
+  color: green;
+}
+
+.text-alert {
+  color: yellow;
+}
+
+.text-danger {
+  color: red;
+}
+
+.text-padrao {
+  color: grey;
+}
+
+header, .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  background-color: lightgray;
+}
+
+header {
+  background-color: skyblue;
+  padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  header {
+    background-color: coral;
+  }
+}
+header h1 {
+  color: darkblue;
+}
+header h1:hover {
+  color: orange;
+}
+header p {
+  color: darkblue;
+}
+
+p {
+  color: green;
+}
+
+button {
+  font-size: 22px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background-color: yellow;
+  color: black;
+}
+
+.paragr-1 {
+  font-size: 8px;
+}
+
+.paragr-2 {
+  font-size: 16px;
+}
+
+.paragr-3 {
+  font-size: 24px;
+}
+
+.paragr-4 {
+  font-size: 32px;
+}
+
+.paragr-5 {
+  font-size: 40px;
+}/*# sourceMappingURL=main.css.map */

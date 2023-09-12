@@ -1,0 +1,99 @@
+@import './variaveis';
+
+// 
+@each $key, $cor in $colors{
+    .text-#{$key}{
+        color: $cor;
+    }
+}
+
+// permite inserir uma configuração personalizavel e eu chamo ele onde eu precisar
+@mixin btn($tamanho, $bg-color, $text-color){
+
+    // estrutura de decisão
+    @if $tamanho == peq{
+        font-size: 12px;
+        padding: 8px 12px;
+        border-radius: 8px;
+    } @else if $tamanho == med{
+        font-size: 18px;
+        padding: 12px 16px;
+        border-radius: 12px;
+    } @else if $tamanho == gde{
+        font-size: 22px;
+        padding: 16px 20px;
+        border-radius: 16px;
+    }
+
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+// % = placeholder (nao tenho estrutura de decisão)
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    background-color: lightgray;
+    // herda o place holder
+    @extend %flex-center;
+}
+
+// nao precisa mais do &
+header{
+    background-color: $bg-title-color;
+    padding: 20px;
+    @extend %flex-center;
+
+    @media screen and (max-width: 768px) {
+        background-color: coral;
+    }
+
+    h1{
+        color: $title-color;   
+        &:hover {
+            color: orange;
+        } 
+    }
+
+    p{
+        color: $title-color;
+    }
+
+}
+
+p{
+    color: green;
+}
+
+// reaproveitamento de codigo e padronização
+button{
+    // @include para usar o mixin
+    @include btn(gde, yellow, black)
+}
+
+// to é como se fosse um 
+// @for $x from 1 to 5{
+//     .paragr-#{$x}{
+//         font-size: 8px * $x;
+//     }
+// }
+
+// se eu quiser que um <= eu tenho que usar o through
+@for $x from 1 through 5{
+    .paragr-#{$x}{
+        font-size: 8px * $x;
+    }
+}
